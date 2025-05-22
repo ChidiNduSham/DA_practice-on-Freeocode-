@@ -1,0 +1,49 @@
+import numpy as np
+
+def calculate(my_list):
+    if len(my_list) == 9:
+        my_array = np.array(my_list, dtype = float).reshape(3,3)
+        calculations = {
+            'mean':[
+                my_array.mean(axis=0).tolist(),
+                my_array.mean(axis=1).tolist(),
+                my_array.mean().tolist()
+            ],
+            
+            'Variance':[
+                my_array.var(axis=0).tolist(),
+                my_array.var(axis=1).tolist(),
+                my_array.var().tolist()
+            ],
+            
+            'Standard Deviation':[
+                my_array.std(axis=0).tolist(),
+                my_array.std(axis=1).tolist(),
+                my_array.std().tolist()
+            ],
+            
+            'Max':[
+                my_array.max(axis=0).tolist(),
+                my_array.max(axis=1).tolist(),
+                my_array.max().tolist()
+            ],
+            
+            'Min':[
+                my_array.min(axis=0).tolist(),
+                my_array.min(axis=1).tolist(),
+                my_array.min().tolist()
+            ],
+
+            'Sum':[
+                my_array.sum(axis=0).tolist(),
+                my_array.sum(axis=1).tolist(),
+                my_array.sum().tolist()
+            ],
+        }
+        return calculations
+
+    else:
+        print(f'List must contain 9 numbers')
+    
+
+    
